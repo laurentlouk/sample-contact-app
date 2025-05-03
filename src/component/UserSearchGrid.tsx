@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
-import { useUsers } from "../hooks/useUsers";
+import MiniSearch from "minisearch";
+import { User, useUsers } from "../hooks/useUsers";
 import { Search } from "./Search";
 import UserGrid from "./UserGrid";
 import { useDebounce } from "../hooks/useDebounce";
@@ -9,15 +10,25 @@ export const UserSearchGrid = () => {
   const [search, setSearch] = useState<string>("");
   const debouncedSearch = useDebounce(search);
 
-  const filteredUsers = useMemo(
-    () =>
-      debouncedSearch
-        ? users.filter((user) =>
-            user.name.toLowerCase().includes(debouncedSearch.toLowerCase())
-          )
-        : users,
-    [users, debouncedSearch]
-  );
+  const miniSearch = useMemo(() => {
+    const minisearch = new MiniSearch<User>({
+      fields: ["name", "username"],
+      storeFields: ["id", "name", "username"],
+      searchOptions: { prefix: true, fuzzy: 0.2 },
+    });
+    minisearch.addAll(users);
+    return minisearch;
+  }, [users]);
+
+  const filteredUsers = useMemo<User[]>(() => {
+    if (!debouncedSearch) return users;
+
+    const results = miniSearch.search(debouncedSearch);
+    // Instead of manually recreating objects, get the original reference
+    return results
+      .map((result) => users.find((user) => user.id === result.id))
+      .filter((user): user is User => user !== undefined);
+  }, [users, miniSearch, debouncedSearch]);
 
   return (
     <>
