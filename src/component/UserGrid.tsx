@@ -11,14 +11,7 @@ interface Props {
 
 export default function UserGrid({ users, loading, error }: Props) {
   const loadingCards = useMemo(
-    () =>
-      Array.from({ length: 10 }, (_, i) => (
-        <UserCard
-          key={i}
-          isLoading
-          user={{ id: i, name: "loading", username: "loading" }}
-        />
-      )),
+    () => Array.from({ length: 10 }, (_, i) => <UserCard key={i} isLoading />),
     []
   );
 

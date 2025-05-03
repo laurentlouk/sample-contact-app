@@ -1,4 +1,4 @@
-import Icon from "./Icon";
+import { Icon } from "./Icon";
 import { StyledButton, StyledButtonProps } from "./styles/Button.styled";
 
 import type { IconProps } from "./Icon";

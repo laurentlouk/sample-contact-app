@@ -65,11 +65,17 @@ export const SkeletonAvatar = styled.div`
   animation: ${shimmer} 2s infinite;
 `;
 
-export const SkeletonText = styled.div`
+type SkeletonTextProps = {
+  $width?: string;
+  height?: string;
+};
+
+export const SkeletonText = styled.div<SkeletonTextProps>`
   height: 20px;
   border-radius: 4px;
   background: ${({ theme }) => theme.colors.skeletonGradient};
   background-size: 1000px 100%;
   animation: ${shimmer} 2s infinite;
   margin-top: 8px;
+  width: ${({ $width }) => $width || "100%"};
 `;

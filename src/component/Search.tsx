@@ -12,7 +12,7 @@ export const Search: FC<SearchProps> = ({ value = "", setValue, disabled }) => {
   return (
     <StyledInput
       type="text"
-      placeholder="Search for users..."
+      placeholder="Search users... (username, name, phone, or email)"
       value={value}
       onChange={(e) => setValue(e.target.value)}
       disabled={disabled}

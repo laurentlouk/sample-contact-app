@@ -5,6 +5,7 @@ export const Grid = styled.div`
   grid-gap: 16px;
   justify-items: center;
   align-items: center;
+  width: 100%;
 
   margin: 0 auto;
 

@@ -1,5 +1,4 @@
 import { memo } from "react";
-import { Flex } from "./styles/Flex.styled";
 import {
   Avatar,
   Card,
@@ -8,28 +7,33 @@ import {
   SkeletonAvatar,
   SkeletonText,
 } from "./styles/UserCard.styled";
+import { Flex } from "./styles/Flex.styled";
+import { UserInformation } from "./UserInformation";
+
 import type { FC } from "react";
+import { User } from "../hooks/useUsers";
 
 type UserCardProps = {
   isLoading?: boolean;
-  user: {
-    id: number;
-    name: string;
-    username: string;
-  };
+  user?: User;
 };
 
 const UserCardComponent: FC<UserCardProps> = ({ isLoading, user }) => {
-  if (isLoading) {
+  if (isLoading || !user) {
     return (
       <Card>
         <Flex $direction="column" $gap="10px" $justify="center" $align="center">
           <SkeletonAvatar />
-          <SkeletonText style={{ width: "60%" }} />
-          <SkeletonText style={{ width: "40%" }} />
+          <SkeletonText $width="60%" />
+          <SkeletonText $width="40%" />
+          <SkeletonText $width="80%" height="50px" />
         </Flex>
       </Card>
     );
+  }
+
+  if (!user) {
+    return null;
   }
 
   return (
@@ -41,6 +45,7 @@ const UserCardComponent: FC<UserCardProps> = ({ isLoading, user }) => {
         />
         <UserName>{user.name}</UserName>
         <Username>@{user.username}</Username>
+        <UserInformation {...user} />
       </Flex>
     </Card>
   );

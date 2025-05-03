@@ -12,7 +12,16 @@ export const UserSearchGrid = () => {
 
   const miniSearch = useMemo(() => {
     const minisearch = new MiniSearch<User>({
-      fields: ["name", "username"],
+      fields: [
+        "name",
+        "username",
+        "email",
+        "phone",
+        "address.street",
+        "address.suite",
+        "address.city",
+        "address.zipcode",
+      ],
       storeFields: ["id", "name", "username"],
       searchOptions: { prefix: true, fuzzy: 0.2 },
     });
