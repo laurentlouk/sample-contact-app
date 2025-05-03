@@ -5,7 +5,9 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 16px;
-  background-color: ${({ theme }) => theme.colors.cardBackground};
+  background: ${({ theme }) => theme.colors.cardBackground};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  backdrop-filter: blur(2px);
   border-radius: 20px;
   width: 100%;
   min-width: 250px;
@@ -26,9 +28,7 @@ export const Avatar = styled.img`
   height: 128px;
   border-radius: 100%;
   margin-right: 16px;
-  border: 4px solid ${({ theme }) => theme.colors.cardBackground};
-  border-color: ${({ theme }) => theme.colors.primary};
-
+  border: 4px solid ${({ theme }) => theme.colors.primary};
   padding: 8px;
 
   transition: all 0.3s ease-in-out;
