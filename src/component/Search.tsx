@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from "react";
 import { StyledInput } from "./styles/Input.styled";
-import { useDebounce } from "../hooks/useDebounce";
+
+import type { FC } from "react";
 
 type SearchProps = {
-  onSearch: (query: string) => void;
   disabled?: boolean;
+  value: string;
+  setValue: (value: string) => void;
 };
 
-export const Search: React.FC<SearchProps> = ({ onSearch, disabled }) => {
-  const [value, setValue] = useState("");
-  const [debouncedValue] = useDebounce(value.toLowerCase(), 300);
-
-  useEffect(() => {
-    onSearch(debouncedValue);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- this is intentional
-  }, [debouncedValue]);
-
+export const Search: FC<SearchProps> = ({ value = "", setValue, disabled }) => {
   return (
     <StyledInput
       type="text"
