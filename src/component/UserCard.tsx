@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Flex } from "./styles/Flex.styled";
 import {
   Avatar,
@@ -18,7 +19,7 @@ type UserCardProps = {
   };
 };
 
-export const UserCard: FC<UserCardProps> = ({ isLoading, user }) => {
+const UserCardComponent: FC<UserCardProps> = ({ isLoading, user }) => {
   if (isLoading) {
     return (
       <Card>
@@ -44,3 +45,5 @@ export const UserCard: FC<UserCardProps> = ({ isLoading, user }) => {
     </Card>
   );
 };
+
+export const UserCard = memo(UserCardComponent);

@@ -4,9 +4,10 @@ import { useDebounce } from "../hooks/useDebounce";
 
 type SearchProps = {
   onSearch: (query: string) => void;
+  disabled?: boolean;
 };
 
-export const Search: React.FC<SearchProps> = ({ onSearch }) => {
+export const Search: React.FC<SearchProps> = ({ onSearch, disabled }) => {
   const [value, setValue] = useState("");
   const [debouncedValue] = useDebounce(value.toLowerCase(), 300);
 
@@ -21,6 +22,7 @@ export const Search: React.FC<SearchProps> = ({ onSearch }) => {
       placeholder="Search for users..."
       value={value}
       onChange={(e) => setValue(e.target.value)}
+      disabled={disabled}
     />
   );
 };
