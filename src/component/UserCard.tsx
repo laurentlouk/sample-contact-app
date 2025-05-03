@@ -1,3 +1,4 @@
+import { Flex } from "./styles/Flex.styled";
 import {
   Avatar,
   Card,
@@ -21,18 +22,25 @@ export const UserCard: FC<UserCardProps> = ({ isLoading, user }) => {
   if (isLoading) {
     return (
       <Card>
-        <SkeletonAvatar />
-        <SkeletonText style={{ width: "60%" }} />
-        <SkeletonText style={{ width: "40%" }} />
+        <Flex $direction="column" $gap="10px" $justify="center" $align="center">
+          <SkeletonAvatar />
+          <SkeletonText style={{ width: "60%" }} />
+          <SkeletonText style={{ width: "40%" }} />
+        </Flex>
       </Card>
     );
   }
 
   return (
     <Card>
-      <Avatar src={`https://i.pravatar.cc/150?u=${user.id}`} alt={user.name} />
-      <UserName>{user.name}</UserName>
-      <Username>@{user.username}</Username>
+      <Flex $direction="column" $gap="10px" $justify="center" $align="center">
+        <Avatar
+          src={`https://i.pravatar.cc/150?u=${user.id}`}
+          alt={user.name}
+        />
+        <UserName>{user.name}</UserName>
+        <Username>@{user.username}</Username>
+      </Flex>
     </Card>
   );
 };

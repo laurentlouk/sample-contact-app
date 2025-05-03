@@ -13,7 +13,7 @@ function App() {
         <GlobalStyles />
         <Header />
         <Container>
-          <Flex gap="20px" wrap="wrap">
+          <Flex $gap="20px" $wrap="wrap">
             <Search onSearch={() => console.log("hello")} />
             <UserCard
               user={{

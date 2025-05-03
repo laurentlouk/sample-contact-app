@@ -9,11 +9,11 @@ export const Header: FC = () => {
 
   return (
     <StyledHeader>
-      <Container fullWidth>
+      <Container $hasFullWidth>
         <Nav>
           <h1>Awesome Contacts</h1>
           <IconButton
-            transparent
+            $transparent
             name={themeName === "light" ? "MdLightMode" : "MdDarkMode"}
             size={24}
             color={theme.colors.text}

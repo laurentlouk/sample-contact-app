@@ -8,7 +8,6 @@ export const Card = styled.div`
   background-color: ${({ theme }) => theme.colors.cardBackground};
   border-radius: 20px;
   max-width: 300px;
-  gap: 35px;
 
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 
