@@ -11,6 +11,7 @@ export const Card = styled.div`
   border-radius: 20px;
   width: 100%;
   min-width: 250px;
+  margin-top: 64px;
 
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 
@@ -24,12 +25,13 @@ export const Card = styled.div`
 `;
 
 export const Avatar = styled.img`
-  width: 128px;
-  height: 128px;
+  width: 110px;
+  height: 110px;
   border-radius: 100%;
   margin-right: 16px;
   border: 4px solid ${({ theme }) => theme.colors.primary};
   padding: 8px;
+  margin-top: -64px;
 
   transition: all 0.3s ease-in-out;
 `;

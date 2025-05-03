@@ -38,7 +38,7 @@ const UserCardComponent: FC<UserCardProps> = ({ isLoading, user }) => {
 
   return (
     <Card>
-      <Flex $direction="column" $gap="10px" $justify="center" $align="center">
+      <Flex $direction="column" $gap="20px" $justify="center" $align="center">
         <Avatar
           src={`https://i.pravatar.cc/150?u=${user.id}`}
           alt={user.name}
