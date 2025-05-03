@@ -3,7 +3,7 @@ import "styled-components";
 // Use const assertions so that properties become literal types
 export const lightTheme = {
   colors: {
-    body: "#f8c8ef",
+    body: "#f9f5ff",
     text: "#1e1e1e",
     textSecondary: "#333",
     primary: "#6200ee",
