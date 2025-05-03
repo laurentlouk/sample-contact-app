@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const StyledInput = styled.input`
   width: 100%;
-  padding: 0.75rem 1rem;
-  margin-bottom: 2rem;
+  padding: 12px 20px;
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 25px;
   background-color: ${(props) => props.theme.colors.searchbarBackground};
