@@ -14,12 +14,12 @@ import { lightTheme, darkTheme } from "../theme";
 
 type ThemeName = "light" | "dark";
 
-interface ThemeCtx {
+type ThemeCtx = {
   theme: DefaultTheme;
   themeName: ThemeName;
   setTheme: (name: ThemeName) => void;
   toggleTheme: () => void;
-}
+};
 
 const ThemeContext = createContext<ThemeCtx>({
   theme: lightTheme,

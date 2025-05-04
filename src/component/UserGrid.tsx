@@ -3,11 +3,11 @@ import { User } from "../hooks/useUsers";
 import { Grid } from "./styles/Grid.styled";
 import { UserCard } from "./UserCard";
 
-interface Props {
+type Props = {
   users: User[];
   loading: boolean;
   error: string | null;
-}
+};
 
 export default function UserGrid({ users, loading, error }: Props) {
   const loadingCards = useMemo(
