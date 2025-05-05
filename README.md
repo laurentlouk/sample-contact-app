@@ -32,6 +32,29 @@ pnpm build
 
 ---
 
+# How styled-components work
+
+```tsx
+const name = "world";
+
+function myTag(literals, ...subs) {
+  console.log("literals:", literals);
+  console.log("subs:", subs);
+  return literals.map((s, i) => s + (subs[i] || "")).join("");
+}
+
+myTag`hello ${name}!`;
+```
+
+---
+
+# How to compose a component highly-configurable
+
+with this kind of components you can drop it anywhere to build your UI’s structure; Rather than writing raw CSS every time.
+link: [Flex 👈🏻](https://github.com/laurentlouk/sample-contact-app/blob/dac31a4ad7c190eeb88b6c1b882b23a1311d6d4f/src/component/styles/Flex.styled.tsx)
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
