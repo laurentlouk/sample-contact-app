@@ -27,6 +27,12 @@ export type FlexProps = {
   $pr?: string;
   $pb?: string;
   $pl?: string;
+  $m?: string;
+  $mx?: string;
+  $my?: string;
+  $mt?: string;
+  $mr?: string;
+  $mb?: string;
   $width?: string;
   $minWidth?: string;
   $maxWidth?: string;
@@ -64,6 +70,13 @@ export const Flex = styled.div<FlexProps>`
   ${({ $pr }) => $pr && `padding-right: ${$pr};`}
   ${({ $pb }) => $pb && `padding-bottom: ${$pb};`}
   ${({ $pl }) => $pl && `padding-left: ${$pl};`}
+
+  ${({ $m }) => $m && `margin: ${$m};`}
+  ${({ $mx }) => $mx && `margin-left: ${$mx}; margin-right: ${$mx};`}
+  ${({ $my }) => $my && `margin-top: ${$my}; margin-bottom: ${$my};`}
+  ${({ $mt }) => $mt && `margin-top: ${$mt};`}
+  ${({ $mr }) => $mr && `margin-right: ${$mr};`}
+  ${({ $mb }) => $mb && `margin-bottom: ${$mb};`}
 
   ${({ $width }) => $width && `width: ${$width};`}
   ${({ $minWidth }) => $minWidth && `min-width: ${$minWidth};`}
