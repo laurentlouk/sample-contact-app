@@ -1,5 +1,5 @@
 import { scan } from "react-scan";
-scan({ enabled: import.meta.env.DEV });
+scan({ enabled: import.meta.env.REACT_APP_SCAN === "enabled" });
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
