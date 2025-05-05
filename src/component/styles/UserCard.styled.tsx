@@ -28,10 +28,10 @@ export const Avatar = styled.img`
   width: 110px;
   height: 110px;
   border-radius: 100%;
-  margin-right: 16px;
   border: 4px solid ${({ theme }) => theme.colors.primary};
   padding: 8px;
   margin-top: -64px;
+  background: ${({ theme }) => theme.colors.cardBackground};
 
   transition: all 0.3s ease-in-out;
 `;
