@@ -7,6 +7,7 @@ export const lightTheme = {
     text: "#1e1e1e",
     textSecondary: "#333",
     primary: "#6200ee",
+    buttonPrimary: "#f4edff",
     cardBackground:
       "linear-gradient(135deg,rgba(255, 255, 255, 0.9) 0%,rgba(246, 248, 255, 0.9) 40%,rgba(235, 240, 250, 0.9) 100%)",
     searchbarBackground: "#f4edff",
@@ -23,6 +24,7 @@ export const darkTheme = {
     text: "#e0e0e0",
     textSecondary: "#b0b0b0",
     primary: "#bb86fc",
+    buttonPrimary: "#120a0d",
     searchbarBackground: "#21172e",
     cardBackground:
       "linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(34,34,34,0.85) 40%, rgba(17,17,17,0.85) 100%)",

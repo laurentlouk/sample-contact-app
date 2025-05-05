@@ -13,7 +13,6 @@ export const Header: FC = () => {
         <Nav>
           <h1>Awesome Contacts</h1>
           <IconButton
-            $transparent
             name={themeName === "light" ? "MdLightMode" : "MdDarkMode"}
             size={24}
             color={theme.colors.text}

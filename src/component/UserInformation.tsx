@@ -33,7 +33,7 @@ const UserInformationComponent: FC<UserInformationProps> = ({
     <>
       <Flex $gap="10%" $align="center" $justify="center">
         <IconButton
-          $transparent
+          variant="ghost"
           name="MdLocationOn"
           size={25}
           aria-label="Location"
@@ -47,7 +47,7 @@ const UserInformationComponent: FC<UserInformationProps> = ({
           onMouseEnter={() => setHoverInfo(formattedAddress)}
         />
         <IconButton
-          $transparent
+          variant="ghost"
           name="FaPhone"
           size={25}
           aria-label="Phone"
@@ -56,7 +56,7 @@ const UserInformationComponent: FC<UserInformationProps> = ({
           onMouseEnter={() => setHoverInfo(phone)}
         />
         <IconButton
-          $transparent
+          variant="ghost"
           name="MdEmail"
           size={25}
           aria-label="Email"
@@ -70,7 +70,7 @@ const UserInformationComponent: FC<UserInformationProps> = ({
           onMouseEnter={() => setHoverInfo(`Email: ${email}`)}
         />
         <IconButton
-          $transparent
+          variant="ghost"
           name="MdOutlineWeb"
           size={25}
           aria-label="Website"
