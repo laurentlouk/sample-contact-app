@@ -55,6 +55,16 @@ link: [Flex 👈🏻](https://github.com/laurentlouk/sample-contact-app/blob/dac
 
 ---
 
+## Remove before going to production
+
+src/hooks/useUsers.ts -> setTimeout
+
+this is just to simulate a delay in the response to show the loading state
+
+---
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
