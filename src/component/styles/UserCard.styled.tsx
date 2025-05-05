@@ -59,25 +59,26 @@ const shimmer = keyframes`
 `;
 
 export const SkeletonAvatar = styled.div`
-  width: 128px;
-  height: 128px;
+  width: 110px;
+  height: 110px;
   border-radius: 100%;
   background: ${({ theme }) => theme.colors.skeletonGradient};
   background-size: 1000px 100%;
   animation: ${shimmer} 2s infinite;
+  margin-top: -64px;
 `;
 
 type SkeletonTextProps = {
   $width?: string;
-  height?: string;
+  $height?: string;
 };
 
 export const SkeletonText = styled.div<SkeletonTextProps>`
-  height: 20px;
+  height: ${({ $height }) => $height || "20px"};
+  width: ${({ $width }) => $width || "100%"};
   border-radius: 4px;
   background: ${({ theme }) => theme.colors.skeletonGradient};
   background-size: 1000px 100%;
   animation: ${shimmer} 2s infinite;
   margin-top: 8px;
-  width: ${({ $width }) => $width || "100%"};
 `;

@@ -22,11 +22,12 @@ const UserCardComponent: FC<UserCardProps> = ({ isLoading, user }) => {
   if (isLoading || !user) {
     return (
       <Card>
-        <Flex $direction="column" $gap="10px" $justify="center" $align="center">
+        <Flex $direction="column" $gap="20px" $justify="center" $align="center">
           <SkeletonAvatar />
           <SkeletonText $width="60%" />
           <SkeletonText $width="40%" />
-          <SkeletonText $width="80%" height="50px" />
+          <SkeletonText $width="200px" $height="30px" />
+          <SkeletonText $width="250px" $height="100px" />
         </Flex>
       </Card>
     );
