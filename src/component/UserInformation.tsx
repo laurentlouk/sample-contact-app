@@ -26,7 +26,7 @@ const UserInformationComponent: FC<UserInformationProps> = ({
   website,
 }) => {
   const { theme } = useContext(ThemeContext);
-  const [hoverInfo, setHoverInfo] = useState("");
+  const [hoverInfo, setHoverInfo] = useState(website);
   const formattedAddress = `${address.street}, ${address.suite}, ${address.city}, ${address.zipcode}`;
 
   return (
@@ -79,7 +79,7 @@ const UserInformationComponent: FC<UserInformationProps> = ({
           onMouseEnter={() => setHoverInfo(website)}
         />
       </Flex>
-      <Panel>{hoverInfo || website}</Panel>
+      <Panel>{hoverInfo}</Panel>
     </>
   );
 };
