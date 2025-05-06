@@ -34,9 +34,13 @@ export const UserSearchGrid = () => {
 
     const results = miniSearch.search(debouncedSearch);
     // Instead of manually recreating objects, get the original reference
-    return results
-      .map((result) => users.find((user) => user.id === result.id))
-      .filter((user): user is User => user !== undefined);
+    return results.reduce<User[]>((filtered, result) => {
+      const user = users.find((u) => u.id === result.id);
+      if (user) {
+        filtered.push(user);
+      }
+      return filtered;
+    }, []);
   }, [users, miniSearch, debouncedSearch]);
 
   return (
