@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { User } from "../hooks/useUsers";
 import { Grid } from "./styles/Grid.styled";
 import { UserCard } from "./UserCard";
@@ -9,21 +8,26 @@ type Props = {
   error: string | null;
 };
 
-export default function UserGrid({ users, loading, error }: Props) {
-  const loadingCards = useMemo(
-    () => Array.from({ length: 10 }, (_, i) => <UserCard key={i} isLoading />),
-    []
-  );
+const LoadingCards = () => (
+  <>
+    {Array.from({ length: 10 }, (_, index) => (
+      <UserCard key={`user.id-${index}`} isLoading />
+    ))}
+  </>
+);
 
+export default function UserGrid({ users, loading, error }: Props) {
   if (error) return <p>{error}</p>;
 
   return (
     <Grid>
-      {loading
-        ? loadingCards
-        : users.map((user, index) => (
-            <UserCard key={`user.id-${index}`} user={user} />
-          ))}
+      {loading ? (
+        <LoadingCards />
+      ) : (
+        users.map((user, index) => (
+          <UserCard key={`user.id-${index}`} user={user} />
+        ))
+      )}
     </Grid>
   );
 }
